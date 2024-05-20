@@ -2,7 +2,7 @@ import style from "./ImageCard.module.css";
 import { IoMdCloudDownload } from "react-icons/io";
 import { SlLike } from "react-icons/sl";
 
-const ImageCard = ({ small, description, likes,  download, onClick }) => {
+const ImageCard = ({ small, description, likes, onClick }) => {
   const handleDownload = (e) => {
     e.preventDefault();
     window.open(small, "_blank");

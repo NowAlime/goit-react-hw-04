@@ -59,7 +59,6 @@ const SearchBar = ({ onSearch }) => {
               className={style.searchText}
               type="text"
               name="text"
-              autoComplete="off"
               id={searchId}
               autoFocus
               placeholder="Search images and photos"
