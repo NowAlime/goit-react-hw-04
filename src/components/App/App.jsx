@@ -75,28 +75,28 @@ import "./App.module.css";
           setLoading(false);
         }
       };
-return  (
-    <>
-      <SearchBar onSearch={handleSearch} />
-      {images.length > 0 && (
-        <ImageGallery images={images} isOpen={handleOpenModal} />
-      )}
-     {endOfCollection && hasLoadedImages && 'The end'}
-      {error && <ErrorMessage searchTerm={searchTerm} setError={setError} />}
-      {loading && <Loader />}
-      {images.length > 0 && !endOfCollection && (
-        <LoadMoreBtn onChange={handleLoadMore} />
-      )}
-      <ImageModal
-        images={images}
-        isOpen={isOpen}
-        isClose={handleCloseModal}
-        imageUrl={selectedImages}
-      />
-    </>
-  );
-
-
- }
-
- export default App;
+      return  (
+        <>
+          <SearchBar onSearch={handleSearch} />
+          {images.length > 0 && (
+            <ImageGallery images={images} isOpen={handleOpenModal} />
+          )}
+         {endOfCollection && hasLoadedImages && 'The end'}
+          {error && <ErrorMessage searchTerm={searchTerm} setError={setError} />}
+          {loading && <Loader />}
+          {images.length > 0 && !endOfCollection && (
+            <LoadMoreBtn onChange={handleLoadMore} />
+          )}
+          <ImageModal
+            images={images}
+            isOpen={isOpen}
+            isClose={handleCloseModal}
+            imageUrl={selectedImages}
+          />
+        </>
+      );
+    
+    
+     }
+    
+     export default App;
