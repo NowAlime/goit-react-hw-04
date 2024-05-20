@@ -1,31 +1,39 @@
-import css from "./ImageCard.module.css";
+import style from "./ImageCard.module.css";
 import { IoMdCloudDownload } from "react-icons/io";
 import { SlLike } from "react-icons/sl";
 
-const ImageCard = ({ small, description, likes, download, onClick }) => {
-  const handleDownload = () => {
+const ImageCard = ({ small, description, likes,  download, onClick }) => {
+  const handleDownload = (e) => {
+    e.preventDefault();
     window.open(small, "_blank");
   };
 
   return (
-    <div className={css.imageContainer}>
+    <div className={style.imageContainer}>
       <img
-        className={css.listImage}
+        className={style.listImage}
         src={small}
         alt={description || "image"}
         onClick={onClick}
       />
-      <div className={css.descriptionImage}>
-        <p className={css.likes}>
-          <SlLike />
+      <div className={style.descriptionImage}>
+        <p className={style.likes}>
+          <SlLike aria-label="Likes" />
           {likes}
         </p>
-        {description ? <p className={css.desc}>{description}</p> : <p></p>}
-        <a href={download} onClick={handleDownload}>
-          <IoMdCloudDownload className={css.icon} />
+        {description && <p className={style.desc}>{description}</p>}
+        <a
+          href={small}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleDownload}
+          aria-label="Download"
+        >
+          <IoMdCloudDownload className={style.icon} />
         </a>
       </div>
     </div>
   );
 };
+
 export default ImageCard;

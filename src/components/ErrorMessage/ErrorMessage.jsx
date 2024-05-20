@@ -1,9 +1,9 @@
-import css from "../ErrorMessage/ErrorMessage.module.css";
+import style from "../ErrorMessage/ErrorMessage.module.css";
 
 const ErrorMessage = () => {
   return (
     <div>
-      <p className={`${css.error} animate`}>
+      <p className={`${style.error} animate`}>
         Sorry, something went wrong, try again later!
       </p>
     </div>

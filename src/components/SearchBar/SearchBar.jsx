@@ -1,8 +1,7 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useId } from "react";
-import style from './SearchBar.module.css';
+import style from '../SearchBar/SearchBar.module.css';
 import toast, { Toaster } from "react-hot-toast";
-import { FaTimes } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
 
 
@@ -14,7 +13,6 @@ const SearchBar = ({ onSearch }) => {
     if (!text) {
       toast.error(
         <p className={style.errorToast}>
-          <FaTimes className={style.errorIcon} />
           Please enter a search query!
         </p>
       );
@@ -38,7 +36,7 @@ const SearchBar = ({ onSearch }) => {
           className: "",
           duration: 4000,
           style: {
-            background: "red",
+            background: "blue",
             color: "#fff",
           },
 

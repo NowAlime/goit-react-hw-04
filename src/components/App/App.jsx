@@ -6,6 +6,7 @@ import fetchImages from "../fetchImg";
 import ImageModal from "../ImageModal/ImageModal";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import Loader from '../Loader/Loader';
+import "./App.module.css";
 
  function App (){
     const [error, setError] = useState(null);
@@ -49,7 +50,7 @@ import Loader from '../Loader/Loader';
       };
       useEffect(() => {
         const fetchTotalImages = async () => {
-          const total = Math.ceil(totalCollection / 10);
+          const total = Math.ceil(totalCollection / 15);
           setTotalImages(total);
         };
     

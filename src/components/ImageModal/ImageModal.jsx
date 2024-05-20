@@ -1,4 +1,4 @@
-import css from '../ImageModal/ImageModal.module.css';
+import style from '../ImageModal/ImageModal.module.css';
 import ReactModal from "react-modal";
 
 
@@ -31,8 +31,8 @@ const ImageModal = ({ imageUrl, isOpen, isClose }) => {
           describedby: "full_description",
         }}
       >
-        <div className={css.imageContainer}>
-          <img className={css.image} src={imageUrl} alt="" />
+        <div className={style.imageContainer}>
+          <img className={style.image} src={imageUrl} alt="" />
         </div>
       </ReactModal>
     );
