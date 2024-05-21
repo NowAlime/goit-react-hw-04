@@ -34,30 +34,30 @@ function App() {
     setSearchTerm(searchTerm);
   };
 
-  useEffect(() => {
-    if (!searchTerm) return;
-
-    const fetchImagesData = async () => {
-      setLoading(true);
-      setError(null);
-
-      try {
-        const data = await fetchImages(searchTerm, page);
-        setImages((prevImages) => (page === 1 ? data.results : [...prevImages, ...data.results]));
-        setTotalPages(Math.ceil(data.total / 15));
-      } catch (error) {
-        setError(true);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchImagesData();
-  }, [searchTerm, page]);
-
   const handleLoadMore = () => {
     setPage((prevPage) => prevPage + 1);
   };
+
+  const fetchImagesData = async () => {
+    if (!searchTerm) return;
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const data = await fetchImages(searchTerm, page);
+      setImages((prevImages) => (page === 1 ? data.results : [...prevImages, ...data.results]));
+      setTotalPages(Math.ceil(data.total / 15));
+    } catch (error) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchImagesData();
+  }, [searchTerm, page]);
 
   return (
     <>
